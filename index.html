@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="script.js" defer></script>
+    <style>
+        @font-face {
+            font-family: 'brandon';
+            src: url('brandon-grotesque-black.otf');
+        }
+
+        * {
+            font-family: 'brandon';
+        }
+
+        h1 {
+            padding-bottom: 1em;
+        }
+
+        #output {
+            padding-top: 1em;
+        }
+
+        .wrapper {
+            padding-top: 10%;
+            width: 50%;
+            text-align: center;
+            background-color: #F6CE06;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .right {
+            float: right;
+            background-color: rgb(21, 63, 165);
+        }
+
+        .left {
+            float: left
+        }
+
+        form {
+            padding: 2em;
+        }
+
+        
+
+        button,
+        #submit,
+        input {
+            background-color: #F6CE06;
+            padding: .5em 1em;
+
+        }
+
+
+        #status {
+            color: #F6CE06;
+            font-size: 3em;
+        }
+
+        button,
+        #submit {
+            outline: none;
+            border-radius: 30px;
+        }
+
+        #alarm-list {
+            color: #F6CE06;
+        }
+
+        #alarm-list h3 {
+            padding-top: 1em;
+        }
+
+        .custom-control-input {
+            font-size: 2em;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper left">
+        <h1>My big dumb clock</h1>
+        <canvas id="canvas" height="300" width="300"></canvas>
+        <div id="output"></div>
+        <div id="status"></div>
+    </div>
+    <div class="wrapper right">
+        <form id="alarm-form">
+            <input type="text" id="alarm-hour" name="alarm-hour" placeholder="Hour (0 - 23)">
+            <input type="text" id="alarm-minute" name="alarm-minute" placeholder="Minute (0 - 59)">
+            <input type="submit" id="submit" value="Set alarm">
+        </form>
+
+        <button id="turn-off-alarm">Ok I am awake</button>
+        <button id="clear-alarm">Clear Alarm</button>
+        
+        <div id="alarm-list">
+            <h3>My Alarm</h3>
+            <p></p>
+            <ul id="alarm-list-ul">
+            </ul>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
